@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Record</title>
+</head>
+<body>
+    <center>
+        <h1>Display Record</h1>
+        <table border="3px">
+
+            <tr>
+                <th>name</th>
+                <th>author</th>
+                <th>date</th>
+            </tr>
+
+            {% for ar in QSAR %}
+
+                <tr>
+                    <td>{{ar.name}}</td>
+                    <td>{{ar.author}}</td>
+                    <td>{{ar.date}}</td>
+                </tr>
+
+            {% endfor %}
+
+        </table>
+    </center>
+</body>
+</html>

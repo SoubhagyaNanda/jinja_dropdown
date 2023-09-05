@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Data</title>
+</head>
+<body>
+
+    <center>
+        <table border="3px">
+
+            <tr>
+                <th>pk</th>
+                <th>topic_name</th>
+                <th>name</th>
+                <th>url</th>
+            </tr>
+
+            {% for tk in QSWO %}
+                <tr>
+                    <td>{{tk.pk}}</td>
+                    <td>{{tk.topic_name}}</td>
+                    <td>{{tk.name}}</td>
+                    <td>{{tk.url}}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+    
+</body>
+</html>

@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('insert_webpage/',insert_webpage,name='insert_webpage'),
     path('insert_access/',insert_access,name='insert_access'),
+    path('select_tag/',select_tag,name='select_tag'),
+    path('checkbox_c/',checkbox_c,name='checkbox_c'),
 ]

@@ -39,3 +39,27 @@ def insert_access(request):
         d1 = {'QSAR':QSAR}
         return render(request,'display_acce.html',context=d1)
     return render(request,'insert_acce.html',context=d)
+
+
+def select_tag(request):
+    LTO= Topic.objects.all()
+    d={'LTO':LTO}
+    if request.method=='POST':
+
+        tolist= request.POST.getlist('tn')
+        print(tolist)
+
+        QSWO = Webpage.objects.none()
+
+        for tn in tolist:
+            QSWO= QSWO|Webpage.objects.filter(topic_name='tn')
+        
+        d1 = {'QSWO':QSWO}
+        return render(request,'display_webpage.html',d1)        
+    return render(request,'select.html',d)
+
+def checkbox_c(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+    
+    return render(request,'checkbox.html',d)
